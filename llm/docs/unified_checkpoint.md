@@ -6,7 +6,7 @@
 * 对下游推理不够友好，当用户希望获取中间阶段保存的 Checkpoint 做下游推理时，需要手动对模型权重进行合并。
 * 不利于应对做恢复训练时，可能会面临的分布式策略改变、训练节点数发生变化的情况。用户往往需要手动对 Checkpoint 进行处理，增加了操作复杂度。
 
-为了最大程度地解决上述的问题，降低用户操作难度，我们提出了大模型统一存储方案——Unified Checkpoint。Unified Checkpoint 的核心思想是将模型权重、优化器权重等进行统一 safetensors 格式存储，在 Checkpoint 存储时不再对分布式策略进行区分，提高大模型存储的通用性。以下将首先介绍 Unified Checkpoint 具体存储格式以及如何使用，随后再简要介绍统一存储的实现原理。
+为了最大程度地解决上述的问题，降低用户操作难度，我们提出了大模型统一存储方案——Unified Checkpoint。Unified Checkpoint 的核心思想是将模型权重、优化器权重等进行统一 safetensors 格式存储，在 Checkpoint 存储时不再对分布式策略进行区分，提高大模型存储的通用性。以下将首先介绍 Unified Checkpoint 具体存储格式以及如何使用，随后简要介绍统一存储的实现原理。
 
 ## 2. 统一存储 Unified Checkpoint 使用介绍
 
